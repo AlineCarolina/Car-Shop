@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const VehicleInterface = z.object({
+export const VehicleInterface = z.object({
   model: z.string()
     .min(3, { message: 'Model must be at least 3 characters' }),
   year: z.number()

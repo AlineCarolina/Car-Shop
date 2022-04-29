@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { VehicleInterface } from './VehicleInterface';
 
-const CarInterface = VehicleInterface.extend({
+export const CarInterface = VehicleInterface.extend({
   doorsQty: z.number()
     .min(2, { message: 'Doors quantity must be at least 2' })
     .max(4, { message: 'Doors quantity must be at most 4' }),

@@ -14,6 +14,7 @@ class Router<T> {
 
   public init() {
     this.router.post(`${this.route}`, this.controller.create);
+    this.router.get(`${this.route}`, this.controller.read);
   }
 }
 

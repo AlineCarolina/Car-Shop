@@ -55,7 +55,7 @@ describe('CarController', () => {
           ...carMockReq,
           doorsQty: 15,
         });
-      expect(res.status).to.be.equal(400);
+      expect(res.status).to.be.eq(400);
       expect(res.body).to.be.deep.eq({ error: 'Error' });
       Sinon.restore();
     });

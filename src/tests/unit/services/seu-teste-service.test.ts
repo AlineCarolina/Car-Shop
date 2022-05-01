@@ -35,11 +35,14 @@ describe('CarService', () => {
       });
 
       it('should return a 400 error when the car is not valid', async () => {
-        const car = await carService.create({
-          ...CarMockInterface,
-          doorsQty: 15,
-        });
-        expect(car).to.be.deep.eq({ error: 'Error' });
+        try {
+          await carService.create({
+            ...CarMockInterface,
+            doorsQty: 15,
+          });
+        } catch (error) {
+          expect(error).to.be.an('error');
+        }
       });
     });
   });
